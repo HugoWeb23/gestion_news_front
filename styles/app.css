@@ -7,6 +7,15 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    color: #2F5E92;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .title-section {
     display: flex;
     justify-content: space-between;
@@ -24,6 +33,7 @@
 .container {
     max-width: 1500px;
     margin: 0 auto;
+    padding: 0 15px 0 15px;
 }
 
 .home-grid {
@@ -126,12 +136,14 @@
 
 .article {
     grid-column: 1 / 4;
+    max-width: 100%;
 }
 
 .article-title {
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .article-description {
@@ -161,8 +173,8 @@
 }
 
 .svg-like {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     fill: #1F3862;
     margin-right: 10px;
 }
@@ -177,12 +189,13 @@
 .comments-title {
     font-size: 30px;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .comments-align-inputs {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 .input {
@@ -190,6 +203,28 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
+}
+
+.input label {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.input textarea {
+    max-width: 100%!important;
+}
+
+.article-comment-input {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.article-comment-input::placeholder {
+    font-size: 17px;
+    color: #A5A5A5;
+    font-weight: 500;
 }
 
 #firstname {
@@ -202,7 +237,9 @@
 }
 
 .user-comment-box {
+    position: relative;
     display: flex;
+    margin-bottom: 20px;
 }
 
 .user-picture {
@@ -211,6 +248,15 @@
 
 .user-reaction {
     float: left;
+}
+
+.user-comment-box:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-bottom: 1px solid #C5C5C5;
+    width: 100%;
 }
 
 .comment-username {
@@ -268,10 +314,87 @@
     width: 100%;
     border: none;
     padding: 5px 0 5px 0;
+    cursor: pointer;
 }
 
 .button-blue {
     background: #2F5E92;
     color: #FFF;
     text-align: center;
+    border: 2px solid #2F5E92;
+    transition-duration: 0.3s;
+}
+
+.button-blue:hover {
+    background: #FFF;
+    color: #2F5E92;
+    transition-duration: 0.3s;
+}
+
+/* Article responsive */
+
+@media screen and (max-width: 946px) {
+.article-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-suggestion-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-suggestion {
+    margin-right: 10px;
+}
+}
+
+@media screen and (max-width: 550px) {
+
+.article-title {
+    font-size: 27px;
+}
+
+.article-description {
+    font-size: 19px;
+}
+
+.svg-like {
+    width: 35px;
+    height: 35px;
+}
+
+.comments-title {
+    font-size: 25px;
+}
+
+.comments-align-inputs {
+    flex-direction: column;
+}
+
+.input:first-child {
+    margin-bottom: 10px;
+}
+
+.article-comment-input {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.article-comment-input::placeholder {
+    font-size: 15px;
+}
+
+#firstname {
+    margin: 0;
+}
+
+.article-suggestion-container {
+    flex-direction: column;
+}
+
+.article-suggestion {
+    width: 100%;
+    margin-right: 0;
+}
 }
