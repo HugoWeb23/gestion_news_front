@@ -152,6 +152,12 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.article-infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 .article-picture {
     margin-bottom: 20px;
 }
