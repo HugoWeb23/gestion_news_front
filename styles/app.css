@@ -565,6 +565,39 @@ a:hover {
     height: 57px;
 }
 
+.icon-header.small {
+    width: 45px;
+    height: 45px;
+}
+
+.return {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 30px;
+}
+
+.return-image {
+    transform: rotate(180deg);
+}
+
+.return-text {
+    color: #FFF;
+    font-size: 15px;
+}
+
+.return::after {
+    content: '';
+    position: absolute;
+    height: 131px;
+    width: 2px;
+    top: -5px;
+    right: -15px;
+    background: #FFF;
+}
+
 .header-title {
     font-size: 35px;
     color: #FFF;
